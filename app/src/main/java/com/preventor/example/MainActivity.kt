@@ -2,6 +2,10 @@ package com.preventor.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import java.util.*
+import com.preventor.pvtidentityverification.PreventorSDK
+import com.preventor.pvtidentityverification.PreventorSDKListener
+import com.preventor.pvtidentityverification.widgets.PreventorButton
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,21 +17,21 @@ class MainActivity : AppCompatActivity() {
 
         val config = preventorSDK.getConfig()
 
-        config.setFlowType("YOUR_FLOW_TYPE");
-        config.getCredentials().setApiKey("YOUR_API_KEY");
-        config.getCredentials().setClientSecret("YOUR_CLIENT_SECRET");
-        config.getCredentials().setTenant("YOUR_TENANT");
-        config.getCredentials().setBanknu("YOUR_BANKNU");
-        config.getCredentials().setEnv("YOUR_ENV");
+        config.flowType = "YOUR_FLOW_TYPE"
+        config.credentials.apiKey = "YOUR_API_KEY"
+        config.credentials.clientSecret = "YOUR_CLIENT_SECRET"
+        config.credentials.tenant = "YOUR_TENANT"
+        config.credentials.banknu = "YOUR_BANKNU"
+        config.credentials.env = "YOUR_ENV"
 
-        config.getCurrentUserInfo().setCifCode("YOUR_CIFCODE");
+        config.currentUserInfo.cifCode = UUID.randomUUID().toString()
 
 
-        config.getTheme().setLogo(R.drawable.your_logo);  //YOUR_LOGO
-        config.getTheme().getButton().setBackgroundColor("YOUR_BACKGROUND_COLOR");
-        config.getTheme().getButton().getFont().setFontFamily("YOUR_FONT_FAMILY");
-        config.getTheme().getButton().getFont().setFontSize(14); //"YOUR_FONT_SIZE"
-        config.getTheme().getButton().getFont().setFontColor("YOUR_FONT_COLOR");
+        config.theme.logo = R.drawable.ic_logotipo
+        config.theme.button.backgroundColor = "YOUR_BACKGROUND_COLOR"
+        config.theme.button.font.fontFamily = "YOUR_FONT_FAMILY"
+        config.theme.button.font.fontSize = 14 //"YOUR_FONT_SIZE"
+        config.theme.button.font.fontColor = "YOUR_FONT_COLOR"
 
         preventorSDK.setConfig(config)
 
@@ -41,12 +45,15 @@ class MainActivity : AppCompatActivity() {
             override fun onStart() {
                 println("MainActivity onStart");
             }
+
             override fun onFinish() {
                 println("MainActivity onFinish");
             }
+
             override fun onError(error: String) {
                 println("MainActivity onError: $error");
             }
+
             override fun onSubmitted() {
                 println("MainActivity onSubmitted");
             }

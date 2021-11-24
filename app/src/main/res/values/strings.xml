@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">preventorAndroidSDK</string>
+    <string name="beginning_identity_verification">This is the beginning \nof the identity verification</string>
+    <string name="integrate_button_verify_message">The button below will start the \nprocess, you will integrate this \nbutton with your App.</string>
 </resources>

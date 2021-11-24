@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fadeScrollbars="false"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.preventor.pvtidentityverification.widgets.PreventorButton
-        android:id="@+id/identityVerificationButton"
-        android:layout_width="161dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="360dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="100dp"
+            android:paddingTop="10dp"
+            android:paddingRight="100dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_logotipo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/h5_hint_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/beginning_identity_verification"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/beginning_of_the_identity" />
+
+            <TextView
+                style="@style/body1_hint_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/integrate_button_verify_message" />
+
+
+        </LinearLayout>
+
+
+        <com.preventor.pvtidentityverification.widgets.PreventorButton
+            android:id="@+id/identityVerificationButton"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="72dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
