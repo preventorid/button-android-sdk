@@ -28,20 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         config.currentUserInfo.cifCode = "YOUR_CIFCODE"
 
-        // 4. SET THE THEME
-
-        config.theme.logo = R.drawable.your_logo //YOUR_LOGO
-
-        config.theme.button.backgroundColor = "#FFFFFF" //YOUR_BACKGROUND_COLOR
-        config.theme.button.font.fontSize = 14 //"YOUR_FONT_SIZE"
-        config.theme.button.font.fontColor = "#1B2358" //YOUR_FONT_COLOR
-        config.theme.steps.font.fontFamily = preventorSDK.tahoma_regular //YOUR_FONT_SELECTED
 
 
-
-        config.theme.steps.primaryColor = preventorSDK.preventor_theme //YOUR_THEME_COLOR_SELECTED
-
-        identityVerificationButton.apply()
+        preventorSDK.initialize()
 
         identityVerificationButton.setOnClickListener {
             preventorSDK.validateApiKey()
