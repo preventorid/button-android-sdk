@@ -12,23 +12,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val preventorSDK = PreventorSDK(this, this)
-        val identityVerificationButton = findViewById<PreventorButton>(R.id.identityVerificationButton)
-
-
         val config = preventorSDK.getConfig()
 
-
-        config.flowType = "YOUR_FLOW_TYPE"
-
+        config.flowType = "YOUR_FLOW_ID"
         config.credentials.apiKey = "YOUR_API_KEY"
         config.credentials.clientSecret = "YOUR_CLIENT_SECRET"
         config.credentials.tenant = "YOUR_TENANT"
         config.credentials.banknu = "YOUR_BANKNU"
         config.credentials.env = "YOUR_ENV"
-
         config.currentUserInfo.cifCode = "YOUR_CIFCODE"
 
 
+        val identityVerificationButton = findViewById<PreventorButton>(R.id.identityVerificationButton)
 
         preventorSDK.initialize()
 
@@ -52,6 +47,8 @@ class MainActivity : AppCompatActivity() {
             override fun onSubmitted() {
                 println("MainActivity onSubmitted");
             }
+
         })
     }
+
 }
