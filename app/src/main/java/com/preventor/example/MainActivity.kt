@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.preventor.pvtidentityverification.PreventorSDK
 import com.preventor.pvtidentityverification.PreventorSDKListener
+import com.preventor.pvtidentityverification.model.Ticked
 import com.preventor.pvtidentityverification.widgets.PreventorButton
 
 class MainActivity : AppCompatActivity() {
@@ -33,19 +34,19 @@ class MainActivity : AppCompatActivity() {
 
         preventorSDK.callback(object : PreventorSDKListener {
             override fun onStart() {
-                println("MainActivity onStart");
+                println("MainActivity onStart")
             }
 
-            override fun onFinish() {
-                println("MainActivity onFinish");
+            override fun onFinish(ticked: Ticked) {
+                println("MainActivity onFinish")
             }
 
             override fun onError(error: String) {
-                println("MainActivity onError: $error");
+                println("MainActivity onError: $error")
             }
 
-            override fun onSubmitted() {
-                println("MainActivity onSubmitted");
+            override fun onSubmitted(ticked: Ticked) {
+                println("MainActivity onSubmitted")
             }
 
         })
