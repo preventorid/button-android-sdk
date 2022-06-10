@@ -34,7 +34,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/h5_hint_light"
+                style="@style/h1_hint_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -49,7 +49,7 @@
                 android:src="@drawable/beginning_of_the_identity" />
 
             <TextView
-                style="@style/body1_hint_light"
+                style="@style/body2_hint_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
