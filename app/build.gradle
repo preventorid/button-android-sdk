@@ -41,5 +41,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation 'com.preventor:preventor_sdk:0.1.226-alpha'
+    implementation 'com.preventor:preventor_sdk:0.1.227-alpha'
 }
