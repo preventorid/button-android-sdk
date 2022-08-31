@@ -15,13 +15,11 @@ class MainActivity : AppCompatActivity() {
         val preventorSDK = PreventorSDK(this, this)
         val config = preventorSDK.getConfig()
 
-        config.flowType = "YOUR_FLOW_ID"
-        config.credentials.apiKey = "YOUR_API_KEY"
-        config.credentials.clientSecret = "YOUR_CLIENT_SECRET"
-        config.credentials.tenant = "YOUR_TENANT"
-        config.credentials.banknu = "YOUR_BANKNU"
-        config.credentials.env = "YOUR_ENV"
-        config.currentUserInfo.cifCode = "YOUR_CIFCODE"
+        config.credentials.apiKey = "FB0uWMb3Pk9hMuiTk8QZu9Y5Uvewfc2f8k0Fv1Md"
+        config.credentials.clientSecret = "ff8f777a82800ff67de016ddf8bd0b3b0fecc305f0431f10a08730e0fe9d87eb"
+        config.credentials.tenant = "preventor"
+        config.credentials.banknu = "1"
+        config.credentials.env = "playground"
 
 
         val identityVerificationButton = findViewById<PreventorButton>(R.id.identityVerificationButton)

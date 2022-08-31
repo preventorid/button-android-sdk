@@ -50,7 +50,7 @@
                 android:layout_marginBottom="31dp"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/beginning_playground" />
+                app:lottie_rawRes="@raw/start_verification" />
             <TextView
                 style="@style/subtitle_1"
                 android:layout_width="match_parent"
