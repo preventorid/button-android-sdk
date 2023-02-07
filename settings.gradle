@@ -4,7 +4,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
-        maven { url 'https://button.preventor.com/__android' }
+        maven { url "https://jitpack.io" }
+        maven { url 'https://button.preventor.com/__android/v2' }
     }
 }
 rootProject.name = "preventorAndroidSDK"

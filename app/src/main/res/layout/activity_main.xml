@@ -1,76 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fadeScrollbars="false"
-    android:orientation="vertical"
+    android:background="#26336F"
     tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:src="@drawable/ic_logotipo" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="360dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="5dp"
-            android:paddingLeft="100dp"
-            android:paddingTop="10dp"
-            android:paddingRight="100dp"
-            android:paddingBottom="10dp"
-            android:src="@drawable/ic_logotipo" />
+
+        <TextView
+            android:id="@+id/tvTitleIntegration"
+            style="@style/display_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_margin_start"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="@dimen/app_margin_end"
+            android:gravity="center_horizontal"
+            android:text="@string/identity_verification"
+            android:textAlignment="center"
+            android:textColor="@color/on_surface_light" />
+
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            style="@style/body_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_margin_start"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="@dimen/app_margin_end"
+            android:gravity="center_horizontal"
+            android:text="@string/integrate_button_verify_message"
+            android:textColor="@color/on_surface_gray_1" />
+
+
+        <TextView
+            android:id="@+id/tvEnableMocks"
+            style="@style/body_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:text="Enable mocks"
+            android:textColor="@color/on_surface_gray_1"
+            android:visibility="gone" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swEnableMocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
 
         <LinearLayout
+            android:id="@+id/llTicked"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="24dp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:visibility="gone"
             android:orientation="vertical">
 
             <TextView
-                style="@style/h1_hint_light"
+                android:id="@+id/tvStatus"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:fontFamily="@font/hind_semi_bold"
-                android:text="@string/beginning_identity_verification"
-                android:textAlignment="center" />
+                android:layout_height="match_parent" />
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/iv1"
-                android:layout_width="wrap_content"
-                android:layout_height="170dp"
-                android:layout_marginTop="117dp"
-                android:layout_marginBottom="31dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/start_verification" />
             <TextView
-                style="@style/subtitle_1"
+                android:id="@+id/tvDispositionStatus"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:fontFamily="@font/hind_regular"
-                android:text="@string/integrate_button_verify_message" />
+                android:layout_height="match_parent" />
 
+            <TextView
+                android:id="@+id/tvCifCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
 
-        <com.preventor.pvtidentityverification.widgets.PreventorButton
-            android:id="@+id/identityVerificationButton"
-            android:layout_width="161dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="72dp" />
-
     </LinearLayout>
 
 
-</ScrollView>
+    <com.preventor.pvtidentityverification.widgets.PreventorButton
+        android:id="@+id/identityVerificationButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/llHomeIndicator"
+        android:layout_marginStart="@dimen/app_margin_start"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/app_margin_end" />
+
+    <include
+        android:id="@+id/llHomeIndicator"
+        layout="@layout/layout_home_indicator" />
+
+</RelativeLayout>

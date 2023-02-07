@@ -2,9 +2,9 @@ package com.preventor.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.preventor.pvtidentityverification.PreventorSDK
-import com.preventor.pvtidentityverification.PreventorSDKListener
 import com.preventor.pvtidentityverification.model.Ticked
+import com.preventor.pvtidentityverification.sdk.PreventorSDK
+import com.preventor.pvtidentityverification.sdk.PreventorSDKListener
 import com.preventor.pvtidentityverification.widgets.PreventorButton
 
 class MainActivity : AppCompatActivity() {
@@ -15,11 +15,17 @@ class MainActivity : AppCompatActivity() {
         val preventorSDK = PreventorSDK(this, this)
         val config = preventorSDK.getConfig()
 
-        config.credentials.apiKey = "FB0uWMb3Pk9hMuiTk8QZu9Y5Uvewfc2f8k0Fv1Md"
-        config.credentials.clientSecret = "ff8f777a82800ff67de016ddf8bd0b3b0fecc305f0431f10a08730e0fe9d87eb"
-        config.credentials.tenant = "preventor"
-        config.credentials.banknu = "1"
-        config.credentials.env = "playground"
+        config.flowId = "YOUR_FLOW_ID"
+        config.credentials.apiKey = "YOUR_API_KEY"
+        config.credentials.clientSecret = "YOUR_CLIENT_SECRET"
+        config.credentials.tenant = "YOUR_TENANT"
+        config.credentials.banknu = "YOUR_BANKNU"
+        config.credentials.env = "YOUR_ENV"
+
+        // 3. SET THE CIF CODE
+        config.currentUserInfo.cifCode = "YOUR_CIFCODE"
+
+        preventorSDK.setTitleAppBar("Identity Verification")
 
 
         val identityVerificationButton = findViewById<PreventorButton>(R.id.identityVerificationButton)
@@ -45,6 +51,14 @@ class MainActivity : AppCompatActivity() {
 
             override fun onSubmitted(ticked: Ticked) {
                 println("MainActivity onSubmitted")
+            }
+
+            override fun onNextStep() {
+                println("MainActivity onNextStep")
+            }
+
+            override fun onComplete() {
+                println("MainActivity onComplete")
             }
 
         })
